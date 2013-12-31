@@ -35,13 +35,19 @@ $(window).load(function () {
       
       event.preventDefault();
     });
+    
+    // Scroll to the top
+    $.scrollTo( 0 );
   });
 });
 
 function ShowDetails(e) {
   e.addClass('active');
   var details = e.find('.list-group-item-body');
-  if (details.find('img').length == 0)
+  if (details.find('img').length == 0) {
     details.prepend(details.comments().html());
-  details.slideDown('fast');
+  }
+  details.slideDown('fast', function() {
+    $.scrollTo(e, 500, {offset: -70});
+  });
 }
