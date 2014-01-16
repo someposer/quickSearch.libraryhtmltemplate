@@ -48,6 +48,6 @@ function ShowDetails(e) {
     details.prepend(details.comments().html());
   }
   details.slideDown('fast', function() {
-    $.scrollTo(e, 500, {offset: -70});
+    e.scrollTo(500, -70);
   });
 }
